@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<link rel="stylesheet" type="text/css" href="styles/animate.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,700&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Manjari:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+	<script src="js/vara.min.js" type="text/javascript"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<title>Text</title>
+</head>
+
+<body>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div class="container">
+		<iframe style='position: absolute; z-index: 1' width="560" height="315"
+			src="https://www.youtube.com/embed/hiRqIZcVkv4?autoplay=1" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div class="vexilla-group" id="vexilla-group vexilla-animation">
+			<div class="vx-gr">
+				<div class="v animated fadeInDown delay-1s">V</div>
+				<div class="x animated fadeInDown delay-2s">X</div>
+			</div>
+
+			<div id="hidden-content" class="hidden-content animated fadeInDown delay-4s">
+			</div>
+
+			<div class="ll-gr">
+				<div class="l1 animated fadeInUp delay-3s">L</div>
+				<div class="l2 animated fadeInUp delay-4s">L</div>
+			</div>
+		</div>
+
+		<button class="review-button" id="reset">
+			<div class="mask">
+				<div class="ring"></div>
+			</div>
+		</button>
+	</div>
+
+
+	<script>
+
+		function animateTitle() {
+			$(".vexilla-group").removeClass('vexilla-animation');
+
+			setTimeout(function () {
+				$(".vexilla-group").addClass('vexilla-animation');
+			}, 5000);
+
+		}
+
+		function animateContent() {
+			$("#hidden-content").html('');
+
+			setTimeout(function () {
+				$("#hidden-content").removeClass('hidden-content').append("<div class='content'><div class='content__container'><ul class='content__container__list'><li class='content__container__list__item'>	YOU CAN NEVER CROSS THE OCEAN UNTIL YOU HAVE THE COURAGE TO LOSE SIGHT OF THE SHORE.</li><li class='content__container__list__item'>BẠN KHÔNG BAO GIỜ CÓ THỂ VƯỢT ĐẠI DƯƠNG NẾU BẠN KHÔNG CÓ ĐỦ CAN ĐẢM NHÌN BỜ BIỂN KHUẤT DẦN.</li><li class='content__container__list__item'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem </li><li class='content__container__list__item'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </li></ul></div></div >");
+
+				$('#reset').prop('disabled', false);
+			}, 6000);
+
+		}
+
+		animateTitle();
+		animateContent();
+
+		$('#reset').on('click', function () {
+			$(this).prop('disabled', true);
+
+			animateTitle();
+			animateContent();
+		});
+	</script>
+</body>
+
+</html>
